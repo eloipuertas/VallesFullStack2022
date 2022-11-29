@@ -1,9 +1,6 @@
 <template>
   <div v-if="disks">
     <h1>Disks in my library</h1>
-    <div v-for="item in disks" :key="item._id">
-        {{ item.title }}
-    </div>
     <Disk
         v-for="disk in disks"
         :key="disk._id"
