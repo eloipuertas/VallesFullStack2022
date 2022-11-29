@@ -11,10 +11,12 @@ from flask import request
 
 # create flask app
 app = Flask(__name__)
-CORS(app)   # enable CORS
 #create connection to database sqlite file
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# enable CORS
+CORS(app)
+
 db = SQLAlchemy(app)
 
 """ 
@@ -39,13 +41,14 @@ class Disk(db.Model):  # type: ignore
         }
     
 """ add main root route """
+
 @app.route('/')
 def index():
-    """add main root route"""
     return 'Hello World'
 
+
 """ GET endpoint for all Disks in the model """
-@app.route('/disks', methods=['GET'])
+@app.route('/disks/', methods=['GET'])
 def get_disks():
     """get all disks"""
     disks = Disk.query.all()
@@ -59,7 +62,7 @@ def get_disk(id):
     return jsonify(disk.serialize()), 200
 
 """ POST endpoint for Disk model """
-@app.route('/disks', methods=['POST'])  # type: ignore
+@app.route('/disks/', methods=['POST'])  # type: ignore
 def create_disk():
     """create a disk"""
     request_body = request.get_json()
@@ -99,7 +102,7 @@ with app.app_context():
         
 #run app
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
 
 
 
