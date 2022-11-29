@@ -21,18 +21,8 @@ export default {
     };
   },
   async created() {
-    const response = await fetch('https://eloipuertas-reimagined-space-waffle-54gqrjqjxg34p5r-5000.preview.app.github.dev/disks/',
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*', 
-          'sec-fetch-mode': '',
-          'sec-fetch-site': '',
-          'sec-fetch-dest': '',
-          'referer_policy': '',
-        }
-      });
+    const response = await fetch('https://eloipuertas-reimagined-space-waffle-54gqrjqjxg34p5r-5000.preview.app.github.dev/disks/'
+      );
     this.disks = await response.json();
   },
 };

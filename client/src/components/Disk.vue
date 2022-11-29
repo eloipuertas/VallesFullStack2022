@@ -1,10 +1,10 @@
 <!-- template for the disk model with title, artist and genre-->
 <template>
   <div>
-    <div class="Disk">
-      <div class="title">{{ disk.title }}</div>
-      <div class="artist">{{ disk.artist }}</div>
-      <div class="genre">{{ disk.genre }}</div>
+    <div class="disk">
+      <div class="title"> {{ disk.title }}</div>
+      <div class="artist"> {{ disk.artist }}</div>
+      <div class="genre"> {{ disk.genre }}</div>
     </div>
   </div>
 </template>
