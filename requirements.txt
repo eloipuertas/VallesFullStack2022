@@ -1,1 +1,4 @@
 Flask 
+Flask_sqlalchemy
+Flask_migrate
+Flask_login
